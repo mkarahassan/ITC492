@@ -1,0 +1,3101 @@
+//Program.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new SignIn());
+        }
+    }
+}
+
+//SignIn.Designer.cs
+
+
+namespace DatabaseSQL
+{
+    partial class SignIn
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignIn));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ButtonLogIn = new System.Windows.Forms.Button();
+            this.textUser = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textPass = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(80)))), ((int)(((byte)(242)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(479, 142);
+            this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(73, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(337, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome! Please Sign In";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.textPass);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.textUser);
+            this.panel2.Controls.Add(this.ButtonLogIn);
+            this.panel2.Location = new System.Drawing.Point(26, 162);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(425, 471);
+            this.panel2.TabIndex = 4;
+            // 
+            // ButtonLogIn
+            // 
+            this.ButtonLogIn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(80)))), ((int)(((byte)(242)))));
+            this.ButtonLogIn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonLogIn.ForeColor = System.Drawing.Color.White;
+            this.ButtonLogIn.Location = new System.Drawing.Point(64, 330);
+            this.ButtonLogIn.Name = "ButtonLogIn";
+            this.ButtonLogIn.Size = new System.Drawing.Size(304, 36);
+            this.ButtonLogIn.TabIndex = 0;
+            this.ButtonLogIn.Text = "LOG IN";
+            this.ButtonLogIn.UseVisualStyleBackColor = false;
+            this.ButtonLogIn.Click += new System.EventHandler(this.ButtonLogIn_Click);
+            // 
+            // textUser
+            // 
+            this.textUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textUser.ForeColor = System.Drawing.Color.Black;
+            this.textUser.Location = new System.Drawing.Point(134, 121);
+            this.textUser.Multiline = true;
+            this.textUser.Name = "textUser";
+            this.textUser.Size = new System.Drawing.Size(234, 27);
+            this.textUser.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(64, 121);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(64, 203);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 27);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // textPass
+            // 
+            this.textPass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textPass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPass.ForeColor = System.Drawing.Color.Black;
+            this.textPass.Location = new System.Drawing.Point(134, 203);
+            this.textPass.Multiline = true;
+            this.textPass.Name = "textPass";
+            this.textPass.PasswordChar = '●';
+            this.textPass.Size = new System.Drawing.Size(234, 27);
+            this.textPass.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(80)))), ((int)(((byte)(242)))));
+            this.panel3.Location = new System.Drawing.Point(64, 154);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(304, 3);
+            this.panel3.TabIndex = 8;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(80)))), ((int)(((byte)(242)))));
+            this.panel4.Location = new System.Drawing.Point(64, 236);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(304, 3);
+            this.panel4.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(80)))), ((int)(((byte)(242)))));
+            this.label2.Location = new System.Drawing.Point(181, 381);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 25);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "CLOSE";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // SignIn
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(479, 654);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "SignIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sign In";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button ButtonLogIn;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox textPass;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textUser;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+    }
+}
+
+//SignIn.cs
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    public partial class SignIn : Form
+    {
+
+        public SignIn()
+        {
+            InitializeComponent();
+        }
+
+        private void ButtonLogIn_Click(object sender, EventArgs e)
+        {
+            if (textUser.Text.ToLower() == "jm dist" && textPass.Text.ToLower() == "password")
+            {
+                new MainMenu().Show();
+            }
+            else
+            {
+                MessageBox.Show("The user name or password is incorrect, please try again");
+                textPass.Clear();
+                textUser.Focus();
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}
+
+// MainMenu.Designer.cs
+
+
+namespace DatabaseSQL
+{
+    partial class MainMenu
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ButtonNew = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkViolet;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(993, 173);
+            this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(77, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(205, 38);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "JM Distribution";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.buttonExit);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.ButtonNew);
+            this.panel2.Location = new System.Drawing.Point(38, 209);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(912, 520);
+            this.panel2.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkViolet;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(46, 164);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(263, 41);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "View Product Table";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ButtonNew
+            // 
+            this.ButtonNew.BackColor = System.Drawing.Color.DarkViolet;
+            this.ButtonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNew.ForeColor = System.Drawing.Color.White;
+            this.ButtonNew.Location = new System.Drawing.Point(46, 46);
+            this.ButtonNew.Name = "ButtonNew";
+            this.ButtonNew.Size = new System.Drawing.Size(263, 41);
+            this.ButtonNew.TabIndex = 1;
+            this.ButtonNew.Text = "View Customer Table";
+            this.ButtonNew.UseVisualStyleBackColor = false;
+            this.ButtonNew.Click += new System.EventHandler(this.ButtonNew_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.BackColor = System.Drawing.Color.DarkViolet;
+            this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.ForeColor = System.Drawing.Color.White;
+            this.buttonExit.Location = new System.Drawing.Point(697, 425);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(149, 41);
+            this.buttonExit.TabIndex = 3;
+            this.buttonExit.Text = "EXIT";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // MainMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(993, 773);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "JM Dist";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button ButtonNew;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonExit;
+    }
+}
+
+//MainMenu.cs
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    public partial class MainMenu : Form
+    {
+        public MainMenu()
+        {
+            InitializeComponent();
+        }
+
+        private void ButtonNew_Click(object sender, EventArgs e)
+        {
+            CustomerTable form = new CustomerTable(this);
+            form.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2(this);
+            form.Show();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}
+
+// Form1.Designer.cs
+
+
+namespace DatabaseSQL
+{
+    partial class CustomerTable
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerTable));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.searchCombo = new System.Windows.Forms.ComboBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerCityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerAreaCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customertBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.jmdistDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.jmdistDataSet = new DatabaseSQL.jmdistDataSet();
+            this.TextSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.PictureBox();
+            this.ButtonNew = new System.Windows.Forms.Button();
+            this.customertBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customer_tTableAdapter = new DatabaseSQL.jmdistDataSetTableAdapters.customer_tTableAdapter();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customertBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jmdistDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jmdistDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customertBindingSource)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkViolet;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1093, 142);
+            this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(72, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Customers";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.searchCombo);
+            this.panel2.Controls.Add(this.dataGridView);
+            this.panel2.Controls.Add(this.TextSearch);
+            this.panel2.Controls.Add(this.buttonSearch);
+            this.panel2.Controls.Add(this.ButtonNew);
+            this.panel2.Location = new System.Drawing.Point(38, 180);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1027, 543);
+            this.panel2.TabIndex = 0;
+            // 
+            // searchCombo
+            // 
+            this.searchCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchCombo.BackColor = System.Drawing.Color.DarkViolet;
+            this.searchCombo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchCombo.ForeColor = System.Drawing.Color.White;
+            this.searchCombo.FormattingEnabled = true;
+            this.searchCombo.Items.AddRange(new object[] {
+            "ID",
+            "Name",
+            "Address",
+            "City",
+            "State",
+            "Zip Code",
+            "Phone Number"});
+            this.searchCombo.Location = new System.Drawing.Point(670, 14);
+            this.searchCombo.Name = "searchCombo";
+            this.searchCombo.Size = new System.Drawing.Size(224, 28);
+            this.searchCombo.TabIndex = 3;
+            this.searchCombo.Text = "Search By..";
+            this.searchCombo.SelectedIndexChanged += new System.EventHandler(this.searchCombo_SelectedIndexChanged);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.customerIDDataGridViewTextBoxColumn,
+            this.customerNameDataGridViewTextBoxColumn,
+            this.customerAddressDataGridViewTextBoxColumn,
+            this.customerCityDataGridViewTextBoxColumn,
+            this.customerStateDataGridViewTextBoxColumn,
+            this.customerAreaCodeDataGridViewTextBoxColumn,
+            this.customerPhoneNumberDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.customertBindingSource1;
+            this.dataGridView.GridColor = System.Drawing.Color.White;
+            this.dataGridView.Location = new System.Drawing.Point(41, 106);
+            this.dataGridView.MultiSelect = false;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.ShowEditingIcon = false;
+            this.dataGridView.Size = new System.Drawing.Size(952, 395);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "CustomerID";
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "CustomerName";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column2.HeaderText = "Name";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "CustomerAddress";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column3.HeaderText = "Address";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "CustomerCity";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column4.HeaderText = "City";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "CustomerState";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column5.HeaderText = "State";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.DataPropertyName = "CustomerAreaCode";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column6.HeaderText = "Zip Code";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.DataPropertyName = "CustomerPhoneNumber";
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column7.HeaderText = "Phone Number";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column8.HeaderText = "";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Text = "Edit";
+            this.Column8.UseColumnTextForButtonValue = true;
+            // 
+            // Column9
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DarkViolet;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkViolet;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Column9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column9.HeaderText = "";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Text = "Delete";
+            this.Column9.UseColumnTextForButtonValue = true;
+            // 
+            // Column10
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Column10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column10.HeaderText = "";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Text = "View";
+            this.Column10.UseColumnTextForButtonValue = true;
+            // 
+            // customerIDDataGridViewTextBoxColumn
+            // 
+            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerID";
+            this.customerIDDataGridViewTextBoxColumn.HeaderText = "CustomerID";
+            this.customerIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
+            this.customerIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerNameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // customerAddressDataGridViewTextBoxColumn
+            // 
+            this.customerAddressDataGridViewTextBoxColumn.DataPropertyName = "CustomerAddress";
+            this.customerAddressDataGridViewTextBoxColumn.HeaderText = "CustomerAddress";
+            this.customerAddressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerAddressDataGridViewTextBoxColumn.Name = "customerAddressDataGridViewTextBoxColumn";
+            this.customerAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerAddressDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // customerCityDataGridViewTextBoxColumn
+            // 
+            this.customerCityDataGridViewTextBoxColumn.DataPropertyName = "CustomerCity";
+            this.customerCityDataGridViewTextBoxColumn.HeaderText = "CustomerCity";
+            this.customerCityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerCityDataGridViewTextBoxColumn.Name = "customerCityDataGridViewTextBoxColumn";
+            this.customerCityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerCityDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // customerStateDataGridViewTextBoxColumn
+            // 
+            this.customerStateDataGridViewTextBoxColumn.DataPropertyName = "CustomerState";
+            this.customerStateDataGridViewTextBoxColumn.HeaderText = "CustomerState";
+            this.customerStateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerStateDataGridViewTextBoxColumn.Name = "customerStateDataGridViewTextBoxColumn";
+            this.customerStateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerStateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // customerAreaCodeDataGridViewTextBoxColumn
+            // 
+            this.customerAreaCodeDataGridViewTextBoxColumn.DataPropertyName = "CustomerAreaCode";
+            this.customerAreaCodeDataGridViewTextBoxColumn.HeaderText = "CustomerAreaCode";
+            this.customerAreaCodeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerAreaCodeDataGridViewTextBoxColumn.Name = "customerAreaCodeDataGridViewTextBoxColumn";
+            this.customerAreaCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerAreaCodeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // customerPhoneNumberDataGridViewTextBoxColumn
+            // 
+            this.customerPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "CustomerPhoneNumber";
+            this.customerPhoneNumberDataGridViewTextBoxColumn.HeaderText = "CustomerPhoneNumber";
+            this.customerPhoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerPhoneNumberDataGridViewTextBoxColumn.Name = "customerPhoneNumberDataGridViewTextBoxColumn";
+            this.customerPhoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerPhoneNumberDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // customertBindingSource1
+            // 
+            this.customertBindingSource1.DataMember = "customer_t";
+            this.customertBindingSource1.DataSource = this.jmdistDataSetBindingSource;
+            // 
+            // jmdistDataSetBindingSource
+            // 
+            this.jmdistDataSetBindingSource.DataSource = this.jmdistDataSet;
+            this.jmdistDataSetBindingSource.Position = 0;
+            // 
+            // jmdistDataSet
+            // 
+            this.jmdistDataSet.DataSetName = "jmdistDataSet";
+            this.jmdistDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // TextSearch
+            // 
+            this.TextSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextSearch.Location = new System.Drawing.Point(607, 48);
+            this.TextSearch.Name = "TextSearch";
+            this.TextSearch.Size = new System.Drawing.Size(332, 30);
+            this.TextSearch.TabIndex = 1;
+            this.TextSearch.TextChanged += new System.EventHandler(this.TextSearch_TextChanged);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.buttonSearch.Image = ((System.Drawing.Image)(resources.GetObject("buttonSearch.Image")));
+            this.buttonSearch.Location = new System.Drawing.Point(939, 48);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(54, 30);
+            this.buttonSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonSearch.TabIndex = 2;
+            this.buttonSearch.TabStop = false;
+            // 
+            // ButtonNew
+            // 
+            this.ButtonNew.BackColor = System.Drawing.Color.DarkViolet;
+            this.ButtonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNew.ForeColor = System.Drawing.Color.White;
+            this.ButtonNew.Location = new System.Drawing.Point(67, 41);
+            this.ButtonNew.Name = "ButtonNew";
+            this.ButtonNew.Size = new System.Drawing.Size(142, 41);
+            this.ButtonNew.TabIndex = 0;
+            this.ButtonNew.Text = "New";
+            this.ButtonNew.UseVisualStyleBackColor = false;
+            this.ButtonNew.Click += new System.EventHandler(this.ButtonNew_Click);
+            // 
+            // customertBindingSource
+            // 
+            this.customertBindingSource.DataMember = "customer_t";
+            this.customertBindingSource.DataSource = this.jmdistDataSet;
+            // 
+            // customer_tTableAdapter
+            // 
+            this.customer_tTableAdapter.ClearBeforeFill = true;
+            // 
+            // CustomerTable
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1093, 771);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.Cyan;
+            this.Name = "CustomerTable";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Customer Table";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.CustomerTable_Shown);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customertBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jmdistDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jmdistDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customertBindingSource)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox buttonSearch;
+        private System.Windows.Forms.TextBox TextSearch;
+        private System.Windows.Forms.Button ButtonNew;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private jmdistDataSet jmdistDataSet;
+        private System.Windows.Forms.BindingSource customertBindingSource;
+        private jmdistDataSetTableAdapters.customer_tTableAdapter customer_tTableAdapter;
+        private System.Windows.Forms.BindingSource jmdistDataSetBindingSource;
+        private System.Windows.Forms.BindingSource customertBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewButtonColumn Column8;
+        private System.Windows.Forms.DataGridViewButtonColumn Column9;
+        private System.Windows.Forms.DataGridViewButtonColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerCityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerStateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerAreaCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerPhoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox searchCombo;
+    }
+}
+
+// Form1.cs
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    public partial class CustomerTable : Form
+    {
+        private readonly MainMenu _mainParent;
+        FormCustomer form;
+        public string comboBox;
+
+        public CustomerTable(MainMenu mainparent)
+        {
+            InitializeComponent();
+            form = new FormCustomer(this);
+            _mainParent = mainparent;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'jmdistDataSet.customer_t' table. You can move, or remove it, as needed.
+            this.customer_tTableAdapter.Fill(this.jmdistDataSet.customer_t);
+            // TODO: This line of code loads data into the 'jmdistDataSet.customer_t' table. You can move, or remove it, as needed.
+            this.customer_tTableAdapter.Fill(this.jmdistDataSet.customer_t);
+
+        }
+        public void Display()
+        {
+            DbCustomer.DisplayAndSearch("SELECT CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerAreaCode, CustomerPhoneNumber FROM Customer_T", dataGridView);
+        }
+        private void ButtonNew_Click(object sender, EventArgs e)
+        {
+            // FormCustomer form = new FormCustomer(this);
+            form.Clear();
+            form.InsertHelper();
+            form.ShowDialog();
+        }
+
+        private void CustomerTable_Shown(object sender, EventArgs e)
+        {
+            Display();
+        }
+
+        private void TextSearch_TextChanged(object sender, EventArgs e)
+        {
+            DbCustomer.DisplayAndSearch("SELECT CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerAreaCode, CustomerPhoneNumber FROM Customer_T WHERE " + comboBox + " LIKE '%" + TextSearch.Text + "%'", dataGridView);
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Condition for Editing
+            if (e.ColumnIndex == 7)
+            {
+                form.Clear();
+                form.id = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                form.name = dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                form.address = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                form.city = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                form.state = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                form.zipCode = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                form.phoneNumber = dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                form.UpdateInfo();
+                form.ShowDialog();
+                return;
+            }
+            //Condition for Deleting
+            if (e.ColumnIndex == 8)
+            {
+                if (MessageBox.Show("Confirm deleting the record with the ID = " + dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() + "?" , "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    DbCustomer.DeleteCustomer(dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    Display();
+                }
+                return;
+            }
+            //Condition for Viewing Customer's Prices
+            if (e.ColumnIndex == 9)
+            {
+                Form3 form = new Form3();
+                form.id = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                form.name = dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                form.Show();
+            }
+        }
+
+        private void searchCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (searchCombo.Text == "ID")
+            {
+                comboBox = "CustomerID";
+            }
+            if (searchCombo.Text == "Name")
+            {
+                comboBox = "CustomerName";
+            }
+            if (searchCombo.Text == "Address")
+            {
+                comboBox = "CustomerAddress";
+            }
+            if (searchCombo.Text == "City")
+            {
+                comboBox = "CustomerCity";
+            }
+            if (searchCombo.Text == "State")
+            {
+                comboBox = "CustomerState";
+            }
+            if (searchCombo.Text == "Zip Code")
+            {
+                comboBox = "CustomerAreaCode";
+            }
+            if (searchCombo.Text == "Phone Number")
+            {
+                comboBox = "CustomerPhoneNumber";
+            }
+        }
+    }
+}
+
+// Customer.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DatabaseSQL
+{
+    class Customer
+    {
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public int ZipCode { get; set; }
+        public string PhoneNumber { get; set; }
+
+        public Customer(string name, string address, string city, string state, int zipCode, string phoneNumber)
+        {
+            Name = name;
+            Address = address;
+            City = city;
+            State = state;
+            ZipCode = zipCode;
+            PhoneNumber = phoneNumber;
+        }
+    }
+}
+
+// DbCustomer.cs
+
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    class DbCustomer
+    {
+        public static MySqlConnection GetConnection()
+        {
+            string sql = "datasource=localhost;port=3306;username=root;password=password;database=jmdist";
+            MySqlConnection con = new MySqlConnection(sql);
+            try
+            {
+                con.Open();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("MySQL Connection! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return con;
+        }
+        public static void AddCustomer(Customer cus)
+        {
+            string sql = "INSERT INTO Customer_T VALUES (NULL, @CustomerName, @CustomerAddress, @CustomerCity, @CustomerState, @CustomerAreaCode, @CustomerPhoneNumber)";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@CustomerName", MySqlDbType.VarChar).Value = cus.Name;
+            cmd.Parameters.Add("@CustomerAddress", MySqlDbType.VarChar).Value = cus.Address;
+            cmd.Parameters.Add("@CustomerCity", MySqlDbType.VarChar).Value = cus.City;
+            cmd.Parameters.Add("@CustomerState", MySqlDbType.VarChar).Value = cus.State;
+            cmd.Parameters.Add("@CustomerAreaCode", MySqlDbType.VarChar).Value = cus.ZipCode;
+            cmd.Parameters.Add("@CustomerPhoneNumber", MySqlDbType.VarChar).Value = cus.PhoneNumber;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Inserted Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Customer is not insterted. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void UpdateCustomer(Customer cus, string id)
+        {
+            string sql = "UPDATE Customer_T SET CustomerName = @CustomerName, CustomerAddress = @CustomerAddress, CustomerCity = @CustomerCity, CustomerState = @CustomerState, CustomerAreaCode = @CustomerAreaCode, CustomerPhoneNumber = @CustomerPhoneNumber WHERE CustomerID = @CustomerID";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@CustomerID", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@CustomerName", MySqlDbType.VarChar).Value = cus.Name;
+            cmd.Parameters.Add("@CustomerAddress", MySqlDbType.VarChar).Value = cus.Address;
+            cmd.Parameters.Add("@CustomerCity", MySqlDbType.VarChar).Value = cus.City;
+            cmd.Parameters.Add("@CustomerState", MySqlDbType.VarChar).Value = cus.State;
+            cmd.Parameters.Add("@CustomerAreaCode", MySqlDbType.VarChar).Value = cus.ZipCode;
+            cmd.Parameters.Add("@CustomerPhoneNumber", MySqlDbType.VarChar).Value = cus.PhoneNumber;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Updated Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Customer is not updated. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void DeleteCustomer(string id)
+        {
+            string sql = "DELETE FROM Customer_T WHERE CustomerID = @CustomerID";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@CustomerID", MySqlDbType.VarChar).Value = id;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Customer is not deleted. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void DisplayAndSearch(string query, DataGridView dgv)
+        {
+            string sql = query;
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataTable tbl = new DataTable();
+            adp.Fill(tbl);
+            dgv.DataSource = tbl;
+            con.Close();
+        }
+
+    }
+}
+
+// FormCustomer.Desginer.cs
+
+
+namespace DatabaseSQL
+{
+    partial class FormCustomer
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ButtonSave = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textNumber = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textZipCode = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textState = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textCity = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textAddress = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textName = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkViolet;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(669, 151);
+            this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(44, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Add Customer";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.ButtonSave);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.textNumber);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.textZipCode);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.textState);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.textCity);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.textAddress);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.textName);
+            this.panel2.Location = new System.Drawing.Point(43, 182);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(580, 557);
+            this.panel2.TabIndex = 0;
+            // 
+            // ButtonSave
+            // 
+            this.ButtonSave.BackColor = System.Drawing.Color.DarkViolet;
+            this.ButtonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSave.ForeColor = System.Drawing.Color.White;
+            this.ButtonSave.Location = new System.Drawing.Point(223, 460);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.Size = new System.Drawing.Size(142, 41);
+            this.ButtonSave.TabIndex = 0;
+            this.ButtonSave.Text = "Save";
+            this.ButtonSave.UseVisualStyleBackColor = false;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(74, 385);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 20);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Phone Number:";
+            // 
+            // textNumber
+            // 
+            this.textNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNumber.Location = new System.Drawing.Point(203, 378);
+            this.textNumber.Name = "textNumber";
+            this.textNumber.Size = new System.Drawing.Size(315, 27);
+            this.textNumber.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(74, 322);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 20);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Zip Code:";
+            // 
+            // textZipCode
+            // 
+            this.textZipCode.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textZipCode.Location = new System.Drawing.Point(203, 315);
+            this.textZipCode.Name = "textZipCode";
+            this.textZipCode.Size = new System.Drawing.Size(315, 27);
+            this.textZipCode.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(74, 259);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 20);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "State:";
+            // 
+            // textState
+            // 
+            this.textState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textState.Location = new System.Drawing.Point(203, 252);
+            this.textState.Name = "textState";
+            this.textState.Size = new System.Drawing.Size(315, 27);
+            this.textState.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(74, 196);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "City:";
+            // 
+            // textCity
+            // 
+            this.textCity.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCity.Location = new System.Drawing.Point(203, 189);
+            this.textCity.Name = "textCity";
+            this.textCity.Size = new System.Drawing.Size(315, 27);
+            this.textCity.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(74, 133);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Address:";
+            // 
+            // textAddress
+            // 
+            this.textAddress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textAddress.Location = new System.Drawing.Point(203, 126);
+            this.textAddress.Name = "textAddress";
+            this.textAddress.Size = new System.Drawing.Size(315, 27);
+            this.textAddress.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(74, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Name:";
+            // 
+            // textName
+            // 
+            this.textName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textName.Location = new System.Drawing.Point(203, 63);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(315, 27);
+            this.textName.TabIndex = 0;
+            // 
+            // FormCustomer
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(669, 769);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "FormCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Customer";
+            this.Load += new System.EventHandler(this.FormCustomer_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textName;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textNumber;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textZipCode;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textState;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textCity;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textAddress;
+        private System.Windows.Forms.Button ButtonSave;
+    }
+}
+
+// FormCustomer.cs
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    public partial class FormCustomer : Form
+    {
+        private readonly CustomerTable _parent;
+       // public int id, zipCode;
+        public string id, name, address, city, state, zipCode, phoneNumber;
+
+        private void FormCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public FormCustomer(CustomerTable parent)
+        {
+            InitializeComponent();
+            _parent = parent;
+        }
+
+        public void UpdateInfo()
+        {
+            this.Text = "Update Customer";
+            label1.Text = "Update Customer";
+            ButtonSave.Text = "Update";
+            textName.Text = name;
+            textAddress.Text = address;
+            textCity.Text = city;
+            textState.Text = state;
+            textZipCode.Text = zipCode;
+            textNumber.Text = phoneNumber;
+        }
+
+        public void InsertHelper()
+        {
+            this.Text = "Add Customer";
+            ButtonSave.Text = "Save";
+            label1.Text = "Add Customer";
+        }
+
+        public void Clear()
+        {
+            textName.Text = textAddress.Text = textCity.Text = textState.Text = textZipCode.Text = textNumber.Text = string.Empty;
+        }
+
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+            if (textName.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Customer Name is Empty");
+                return;
+            }
+            if (textAddress.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Customer Address is Empty");
+                return;
+            }
+            if (textCity.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Customer City is Empty");
+                return;
+            }
+            if (textState.Text.Trim().Length == 0 || textState.Text.Trim().Length > 2)
+            {
+                MessageBox.Show("Customer State is Empty or more than two letters. \n**Please use a 2 letter input**");
+                return;
+            }
+            if (textZipCode.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Customer ZipCode is Empty");
+                return;
+            }
+            if (textNumber.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Customer Phone Number is Empty");
+                return;
+            }
+            if (ButtonSave.Text == "Save")
+            {
+                Customer cus = new Customer(textName.Text.Trim(), textAddress.Text.Trim(), textCity.Text.Trim(), textState.Text.Trim(), int.Parse(textZipCode.Text.Trim()), textNumber.Text.Trim());
+                DbCustomer.AddCustomer(cus);
+                Clear();
+            }
+            if (ButtonSave.Text == "Update")
+            {
+                Customer cus = new Customer(textName.Text.Trim(), textAddress.Text.Trim(), textCity.Text.Trim(), textState.Text.Trim(), int.Parse(textZipCode.Text.Trim()), textNumber.Text.Trim());
+                DbCustomer.UpdateCustomer(cus, id);
+            }
+            _parent.Display();
+            this.Close();
+        }
+    }
+}
+
+// Form2.Designer.cs
+
+
+namespace DatabaseSQL
+{
+    partial class Form2
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.TextSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.PictureBox();
+            this.ButtonNew = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.jmdistDataSet1 = new DatabaseSQL.jmdistDataSet1();
+            this.producttBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.product_tTableAdapter = new DatabaseSQL.jmdistDataSet1TableAdapters.product_tTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonSearch)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jmdistDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producttBindingSource)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dataGridView);
+            this.panel2.Controls.Add(this.TextSearch);
+            this.panel2.Controls.Add(this.buttonSearch);
+            this.panel2.Controls.Add(this.ButtonNew);
+            this.panel2.Location = new System.Drawing.Point(37, 183);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1012, 475);
+            this.panel2.TabIndex = 1;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column8,
+            this.Column9,
+            this.productIDDataGridViewTextBoxColumn,
+            this.productNameDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.producttBindingSource;
+            this.dataGridView.GridColor = System.Drawing.Color.White;
+            this.dataGridView.Location = new System.Drawing.Point(41, 106);
+            this.dataGridView.MultiSelect = false;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.ShowEditingIcon = false;
+            this.dataGridView.Size = new System.Drawing.Size(937, 327);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // TextSearch
+            // 
+            this.TextSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextSearch.Location = new System.Drawing.Point(592, 48);
+            this.TextSearch.Name = "TextSearch";
+            this.TextSearch.Size = new System.Drawing.Size(332, 30);
+            this.TextSearch.TabIndex = 1;
+            this.TextSearch.TextChanged += new System.EventHandler(this.TextSearch_TextChanged);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.buttonSearch.Image = ((System.Drawing.Image)(resources.GetObject("buttonSearch.Image")));
+            this.buttonSearch.Location = new System.Drawing.Point(924, 48);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(54, 30);
+            this.buttonSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonSearch.TabIndex = 2;
+            this.buttonSearch.TabStop = false;
+            // 
+            // ButtonNew
+            // 
+            this.ButtonNew.BackColor = System.Drawing.Color.DarkViolet;
+            this.ButtonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNew.ForeColor = System.Drawing.Color.White;
+            this.ButtonNew.Location = new System.Drawing.Point(67, 41);
+            this.ButtonNew.Name = "ButtonNew";
+            this.ButtonNew.Size = new System.Drawing.Size(142, 41);
+            this.ButtonNew.TabIndex = 0;
+            this.ButtonNew.Text = "New";
+            this.ButtonNew.UseVisualStyleBackColor = false;
+            this.ButtonNew.Click += new System.EventHandler(this.ButtonNew_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkViolet;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1088, 142);
+            this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(72, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Products";
+            // 
+            // jmdistDataSet1
+            // 
+            this.jmdistDataSet1.DataSetName = "jmdistDataSet1";
+            this.jmdistDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // producttBindingSource
+            // 
+            this.producttBindingSource.DataMember = "product_t";
+            this.producttBindingSource.DataSource = this.jmdistDataSet1;
+            // 
+            // product_tTableAdapter
+            // 
+            this.product_tTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "ProductID";
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle21;
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "ProductName";
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle22;
+            this.Column2.HeaderText = "Name";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle23;
+            this.Column8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column8.HeaderText = "";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Text = "Edit";
+            this.Column8.UseColumnTextForButtonValue = true;
+            // 
+            // Column9
+            // 
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.DarkViolet;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.DarkViolet;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle24;
+            this.Column9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column9.HeaderText = "";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Text = "Delete";
+            this.Column9.UseColumnTextForButtonValue = true;
+            // 
+            // productIDDataGridViewTextBoxColumn
+            // 
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productNameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1088, 699);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Product Table";
+            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Shown += new System.EventHandler(this.Form2_Shown_1);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonSearch)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jmdistDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producttBindingSource)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.TextBox TextSearch;
+        private System.Windows.Forms.PictureBox buttonSearch;
+        private System.Windows.Forms.Button ButtonNew;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private jmdistDataSet1 jmdistDataSet1;
+        private System.Windows.Forms.BindingSource producttBindingSource;
+        private jmdistDataSet1TableAdapters.product_tTableAdapter product_tTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewButtonColumn Column8;
+        private System.Windows.Forms.DataGridViewButtonColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+    }
+}
+
+// Form2.cs
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    public partial class Form2 : Form
+    {
+        private readonly MainMenu _mainParent;
+        FormProduct form;
+        public Form2(MainMenu mainparent)
+        {
+            InitializeComponent();
+            form = new FormProduct(this);
+            _mainParent = mainparent;
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'jmdistDataSet1.product_t' table. You can move, or remove it, as needed.
+            this.product_tTableAdapter.Fill(this.jmdistDataSet1.product_t);
+        }
+        public void Display()
+        {
+            DbProduct.DisplayAndSearch("SELECT ProductID, ProductName FROM Product_T", dataGridView);
+        }
+
+        private void TextSearch_TextChanged(object sender, EventArgs e)
+        {
+            DbProduct.DisplayAndSearch("SELECT ProductID, ProductName FROM Product_T WHERE ProductName LIKE '%" + TextSearch.Text + "%'", dataGridView);
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                form.Clear();
+                form.id = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                form.name = dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                form.UpdateInfo();
+                form.ShowDialog();
+                return;
+            }
+            //Condition for Deleting
+            if (e.ColumnIndex == 3)
+            {
+                if (MessageBox.Show("Confirm deleting the record with the ID = " + dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() + "?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    DbProduct.DeleteProduct(dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    Display();
+                }
+                return;
+            }
+        }
+
+        private void ButtonNew_Click_1(object sender, EventArgs e)
+        {
+            form.Clear();
+            form.InsertHelper();
+            form.ShowDialog();
+        }
+
+        private void Form2_Shown_1(object sender, EventArgs e)
+        {
+            Display();
+        }
+    }
+}
+
+// Product.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DatabaseSQL
+{
+    class Product
+    {
+        public string Name { get; set; }
+
+        public Product(string name)
+        {
+            Name = name;
+        }
+    }
+}
+
+// DbProduct.cs
+
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    class DbProduct
+    {
+        public static MySqlConnection GetConnection()
+        {
+            string sql = "datasource=localhost;port=3306;username=root;password=password;database=jmdist";
+            MySqlConnection con = new MySqlConnection(sql);
+            try
+            {
+                con.Open();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("MySQL Connection! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return con;
+        }
+        public static void AddProduct(Product pro)
+        {
+            string sql = "INSERT INTO Product_T VALUES (NULL, @ProductName)";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@ProductName", MySqlDbType.VarChar).Value = pro.Name;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Inserted Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Product is not insterted. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void UpdateProduct(Product pro, string id)
+        {
+            string sql = "UPDATE Product_T SET ProductName = @ProductName WHERE ProductID = @ProductID";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@ProductID", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@ProductName", MySqlDbType.VarChar).Value = pro.Name;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Updated Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Product is not updated. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void DeleteProduct(string id)
+        {
+            string sql = "DELETE FROM Product_T WHERE ProductID = @ProductID";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@ProductID", MySqlDbType.VarChar).Value = id;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Product is not deleted. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void DisplayAndSearch(string query, DataGridView dgv)
+        {
+            string sql = query;
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataTable tbl = new DataTable();
+            adp.Fill(tbl);
+            dgv.DataSource = tbl;
+            con.Close();
+        }
+    }
+}
+
+// FormProduct.Designer.cs
+
+
+namespace DatabaseSQL
+{
+    partial class FormProduct
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ButtonSave = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textName = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.ButtonSave);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.textName);
+            this.panel2.Location = new System.Drawing.Point(43, 201);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(580, 557);
+            this.panel2.TabIndex = 1;
+            // 
+            // ButtonSave
+            // 
+            this.ButtonSave.BackColor = System.Drawing.Color.DarkViolet;
+            this.ButtonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSave.ForeColor = System.Drawing.Color.White;
+            this.ButtonSave.Location = new System.Drawing.Point(223, 460);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.Size = new System.Drawing.Size(142, 41);
+            this.ButtonSave.TabIndex = 0;
+            this.ButtonSave.Text = "Save";
+            this.ButtonSave.UseVisualStyleBackColor = false;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(74, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Name:";
+            // 
+            // textName
+            // 
+            this.textName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textName.Location = new System.Drawing.Point(203, 63);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(315, 27);
+            this.textName.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkViolet;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(654, 151);
+            this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(44, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Add Product";
+            // 
+            // FormProduct
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(654, 788);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Name = "FormProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Add Product";
+            this.Load += new System.EventHandler(this.FormProduct_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button ButtonSave;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textName;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+    }
+}
+
+// FormProduct.cs
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    public partial class FormProduct : Form
+    {
+        private readonly Form2 _parent;
+        public string id, name;
+
+        private void FormProduct_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public FormProduct(Form2 parent)
+        {
+            InitializeComponent();
+            _parent = parent;
+        }
+
+        public void UpdateInfo()
+        {
+            this.Text = "Update Product";
+            label1.Text = "Update Product";
+            ButtonSave.Text = "Update";
+            textName.Text = name;
+        }
+
+        public void InsertHelper()
+        {
+            this.Text = "Add Product";
+            ButtonSave.Text = "Save";
+            label1.Text = "Add Product";
+        }
+
+        public void Clear()
+        {
+            textName.Text = string.Empty;
+        }
+
+        private void ButtonSave_Click_1(object sender, EventArgs e)
+        {
+            if (textName.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Product Name is Empty");
+                return;
+            }
+            if (ButtonSave.Text == "Save")
+            {
+                Product pro = new Product(textName.Text.Trim());
+                DbProduct.AddProduct(pro);
+                Clear();
+            }
+            if (ButtonSave.Text == "Update")
+            {
+                Product pro = new Product(textName.Text.Trim());
+                DbProduct.UpdateProduct(pro, id);
+            }
+            _parent.Display();
+            this.Close();
+        }
+    }
+}
+
+// Form3.Designer.cs
+
+
+namespace DatabaseSQL
+{
+    partial class Form3
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.TextSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.PictureBox();
+            this.ButtonNew = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonSearch)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dataGridView);
+            this.panel2.Controls.Add(this.TextSearch);
+            this.panel2.Controls.Add(this.buttonSearch);
+            this.panel2.Controls.Add(this.ButtonNew);
+            this.panel2.Location = new System.Drawing.Point(37, 243);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1012, 475);
+            this.panel2.TabIndex = 3;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dataGridView.GridColor = System.Drawing.Color.White;
+            this.dataGridView.Location = new System.Drawing.Point(41, 106);
+            this.dataGridView.MultiSelect = false;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.ShowEditingIcon = false;
+            this.dataGridView.Size = new System.Drawing.Size(937, 327);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // TextSearch
+            // 
+            this.TextSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextSearch.Location = new System.Drawing.Point(592, 48);
+            this.TextSearch.Name = "TextSearch";
+            this.TextSearch.Size = new System.Drawing.Size(332, 30);
+            this.TextSearch.TabIndex = 1;
+            this.TextSearch.TextChanged += new System.EventHandler(this.TextSearch_TextChanged);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.buttonSearch.Image = ((System.Drawing.Image)(resources.GetObject("buttonSearch.Image")));
+            this.buttonSearch.Location = new System.Drawing.Point(924, 48);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(54, 30);
+            this.buttonSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonSearch.TabIndex = 2;
+            this.buttonSearch.TabStop = false;
+            // 
+            // ButtonNew
+            // 
+            this.ButtonNew.BackColor = System.Drawing.Color.DarkViolet;
+            this.ButtonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNew.ForeColor = System.Drawing.Color.White;
+            this.ButtonNew.Location = new System.Drawing.Point(67, 41);
+            this.ButtonNew.Name = "ButtonNew";
+            this.ButtonNew.Size = new System.Drawing.Size(142, 41);
+            this.ButtonNew.TabIndex = 0;
+            this.ButtonNew.Text = "New";
+            this.ButtonNew.UseVisualStyleBackColor = false;
+            this.ButtonNew.Click += new System.EventHandler(this.ButtonNew_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkViolet;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1102, 142);
+            this.panel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(72, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(235, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Customer\'s Prices";
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "ProductID";
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "Product ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "ProductName";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column2.HeaderText = "Product Name";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "CustomerProductPrice";
+            this.Column3.HeaderText = "Price";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column4.HeaderText = "";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Text = "Edit";
+            this.Column4.UseColumnTextForButtonValue = true;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkViolet;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkViolet;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column5.HeaderText = "";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Text = "Delete";
+            this.Column5.UseColumnTextForButtonValue = true;
+            // 
+            // Form3
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1102, 779);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Price Table";
+            this.Shown += new System.EventHandler(this.Form3_Shown);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonSearch)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.TextBox TextSearch;
+        private System.Windows.Forms.PictureBox buttonSearch;
+        private System.Windows.Forms.Button ButtonNew;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewButtonColumn Column4;
+        private System.Windows.Forms.DataGridViewButtonColumn Column5;
+    }
+}
+
+// Form3.cs
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    public partial class Form3 : Form
+    {
+        FormPrice frm;
+        public string id, name;
+        public Form3()
+        {
+            InitializeComponent();
+            frm = new FormPrice(this);
+        }
+        public void Display()
+        {
+            DbCustomer.DisplayAndSearch("SELECT ProductID, ProductName, CustomerProductPrice FROM Customer_T JOIN CustomerProductPrice_T USING (CustomerID) JOIN Product_T USING (ProductID) WHERE CustomerID = " + id, dataGridView);
+        }
+
+        private void ButtonNew_Click(object sender, EventArgs e)
+        {
+            frm.Clear();
+            frm.InsertHelper();
+            frm.ShowDialog();
+        }
+
+        private void TextSearch_TextChanged(object sender, EventArgs e)
+        {
+            DbCustomer.DisplayAndSearch("SELECT ProductID, ProductName, CustomerProductPrice FROM Customer_T JOIN CustomerProductPrice_T USING (CustomerID) JOIN Product_T USING (ProductID) WHERE ProductName LIKE '%" + TextSearch.Text + "%' AND CustomerID = " + id, dataGridView);
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                frm.Clear();
+                frm.pid = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                frm.pprice = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                frm.UpdateInfo();
+                frm.ShowDialog();
+                return;
+            }
+            if (e.ColumnIndex == 1)
+            {
+                if (MessageBox.Show("Confirm deleting the record with the ID = " + dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString() + "?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    DbPrice.DeletePrice(id ,dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    Display();
+                }
+                return;
+            }
+        }
+
+        private void Form3_Shown(object sender, EventArgs e)
+        {
+            label1.Text = "Customer Name: " + name;
+            Display();
+        }
+
+    }
+}
+
+// Price.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DatabaseSQL
+{
+    class Price
+    {
+        public int CustomerID { get; set; }
+        public int ProductID { get; set; }
+        public double CusPrice { get; set; }
+
+        public Price(int cID, int pID, double cPrice)
+        {
+            CustomerID = cID;
+            ProductID = pID;
+            CusPrice = cPrice;
+        }
+    }
+}
+
+//DbPrice.cs
+
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    class DbPrice
+    {
+        public static MySqlConnection GetConnection()
+        {
+            string sql = "datasource=localhost;port=3306;username=root;password=password;database=jmdist";
+            MySqlConnection con = new MySqlConnection(sql);
+            try
+            {
+                con.Open();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("MySQL Connection! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return con;
+        }
+
+        public static void AddPrice(Price pri)
+        {
+            string sql = "INSERT INTO CustomerProductPrice_T (CustomerID, ProductID, CustomerProductPrice) VALUES (@CustomerID, @ProductID, @CustomerProductPrice)";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@CustomerID", MySqlDbType.VarChar).Value = pri.CustomerID;
+            cmd.Parameters.Add("@ProductID", MySqlDbType.VarChar).Value = pri.ProductID;
+            cmd.Parameters.Add("@CustomerProductPrice", MySqlDbType.VarChar).Value = pri.CusPrice;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Inserted Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Customer is not insterted. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+        public static void UpdatePrice(Price pri)
+        {
+            string sql = "UPDATE CustomerProductPrice_T SET CustomerProductPrice = @CustomerProductPrice WHERE CustomerID = @CustomerID AND ProductID = @ProductID";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@CustomerID", MySqlDbType.VarChar).Value = pri.CustomerID;
+            cmd.Parameters.Add("@ProductID", MySqlDbType.VarChar).Value = pri.ProductID;
+            cmd.Parameters.Add("@CustomerProductPrice", MySqlDbType.VarChar).Value = pri.CusPrice;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Updated Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Customer is not updated. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void DeletePrice(string id, string cid)
+        {
+            string sql = "DELETE FROM CustomerProductPrice_T WHERE CustomerID = @CustomerID AND ProductID = @ProductID";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@CustomerID", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@ProductID", MySqlDbType.VarChar).Value = cid;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Customer is not deleted. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+    }
+}
+
+// FormPrice.Designer.cs
+
+
+namespace DatabaseSQL
+{
+    partial class FormPrice
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ButtonSave = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textAddress = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.productCombo = new System.Windows.Forms.ComboBox();
+            this.jmdistDataSet1 = new DatabaseSQL.jmdistDataSet1();
+            this.producttBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.product_tTableAdapter = new DatabaseSQL.jmdistDataSet1TableAdapters.product_tTableAdapter();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jmdistDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producttBindingSource)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.productCombo);
+            this.panel2.Controls.Add(this.ButtonSave);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.textAddress);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(43, 207);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(580, 557);
+            this.panel2.TabIndex = 1;
+            // 
+            // ButtonSave
+            // 
+            this.ButtonSave.BackColor = System.Drawing.Color.DarkViolet;
+            this.ButtonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSave.ForeColor = System.Drawing.Color.White;
+            this.ButtonSave.Location = new System.Drawing.Point(223, 460);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.Size = new System.Drawing.Size(142, 41);
+            this.ButtonSave.TabIndex = 0;
+            this.ButtonSave.Text = "Save";
+            this.ButtonSave.UseVisualStyleBackColor = false;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(74, 133);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Price:";
+            // 
+            // textAddress
+            // 
+            this.textAddress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textAddress.Location = new System.Drawing.Point(203, 126);
+            this.textAddress.Name = "textAddress";
+            this.textAddress.Size = new System.Drawing.Size(315, 27);
+            this.textAddress.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(74, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Product Name:";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkViolet;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(668, 151);
+            this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(44, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Add Price";
+            // 
+            // productCombo
+            // 
+            this.productCombo.BackColor = System.Drawing.Color.DarkViolet;
+            this.productCombo.DataSource = this.producttBindingSource;
+            this.productCombo.DisplayMember = "ProductName";
+            this.productCombo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productCombo.ForeColor = System.Drawing.Color.White;
+            this.productCombo.FormattingEnabled = true;
+            this.productCombo.Location = new System.Drawing.Point(203, 62);
+            this.productCombo.Name = "productCombo";
+            this.productCombo.Size = new System.Drawing.Size(315, 28);
+            this.productCombo.TabIndex = 4;
+            this.productCombo.Text = "Select Name";
+            this.productCombo.ValueMember = "ProductID";
+            // 
+            // jmdistDataSet1
+            // 
+            this.jmdistDataSet1.DataSetName = "jmdistDataSet1";
+            this.jmdistDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // producttBindingSource
+            // 
+            this.producttBindingSource.DataMember = "product_t";
+            this.producttBindingSource.DataSource = this.jmdistDataSet1;
+            // 
+            // product_tTableAdapter
+            // 
+            this.product_tTableAdapter.ClearBeforeFill = true;
+            // 
+            // FormPrice
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(668, 788);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "FormPrice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Add Price";
+            this.Load += new System.EventHandler(this.FormPrice_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jmdistDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producttBindingSource)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button ButtonSave;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textAddress;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox productCombo;
+        private jmdistDataSet1 jmdistDataSet1;
+        private System.Windows.Forms.BindingSource producttBindingSource;
+        private jmdistDataSet1TableAdapters.product_tTableAdapter product_tTableAdapter;
+    }
+}
+
+// FormPrice.cs
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DatabaseSQL
+{
+    public partial class FormPrice : Form
+    {
+        private readonly Form3 _parent;
+        public string pid, pprice;
+        public FormPrice(Form3 parent)
+        {
+            InitializeComponent();
+            _parent = parent;
+        }
+
+        public void UpdateInfo()
+        {
+            this.Text = "Update Price";
+            label1.Text = "Update Price";
+            ButtonSave.Text = "Update";
+            productCombo.Text = " ";
+            this.productCombo.Hide();
+            this.label2.Hide();
+            textAddress.Text = pprice;
+        }
+
+        public void InsertHelper()
+        {
+            this.Text = "Add Price";
+            ButtonSave.Text = "Save";
+            label1.Text = "Add Price";
+            productCombo.Text = "Select Name";
+            this.productCombo.Show();
+            this.label2.Show();
+        }
+
+        public void Clear()
+        {
+            textAddress.Text = string.Empty;
+        }
+
+        private void FormPrice_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'jmdistDataSet1.product_t' table. You can move, or remove it, as needed.
+            this.product_tTableAdapter.Fill(this.jmdistDataSet1.product_t);
+
+        }
+
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+            if (productCombo.Text == "Select Name")
+            {
+                MessageBox.Show("Product Name is Not Selected");
+                return;
+            }
+            if (textAddress.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Price is Empty");
+                return;
+            }
+            if (ButtonSave.Text == "Save")
+            {
+                Price pri = new Price(int.Parse(_parent.id), int.Parse(productCombo.SelectedValue.ToString()), double.Parse(textAddress.Text.Trim()));
+                DbPrice.AddPrice(pri);
+                Clear();
+            }
+            if (ButtonSave.Text == "Update")
+            {
+                Price pri = new Price(int.Parse(_parent.id), int.Parse(pid), double.Parse(textAddress.Text.Trim()));
+                DbPrice.UpdatePrice(pri);
+            }
+
+            _parent.Display();
+            this.Close();
+        }
+    }
+}
+
+
+
+
